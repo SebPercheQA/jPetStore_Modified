@@ -56,7 +56,7 @@ class ScreenTransitionIT {
     browser = CHROME;
     headless = true;
     timeout = TimeUnit.SECONDS.toMillis(10);
-    baseUrl = "http://localhost:8181/jpetstore";
+    baseUrl = "http://localhost:8080/jpetstore";
   }
 
   @AfterEach
@@ -109,7 +109,7 @@ class ScreenTransitionIT {
     // Update quantity
     $(By.name("EST-20")).setValue("10");
     $(By.name("updateCartQuantities")).click();
-    $(By.cssSelector("#Catalog tr td:nth-of-type(7)")).shouldBe(text("$55,00"));
+    $(By.cssSelector("#Catalog tr td:nth-of-type(7)")).shouldBe(text("$55.00"));
     $(By.cssSelector("#Cart tr:nth-of-type(4) td")).shouldBe(text("Sub Total: $248,50"));
 
     // Remove item
